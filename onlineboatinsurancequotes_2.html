@@ -1,0 +1,224 @@
+<?php
+if (isset($_REQUEST['do'])) {
+}
+else {
+$_REQUEST['do'] == "";
+}
+if ($_REQUEST['do'] == "step2") { 
+    include ('fieldforwarder.php');
+
+foreach($_GET as $a=>$b){$$a=$b;} 
+foreach($_POST as $a=>$b){$$a=$b;}
+
+$to  = "Dworthman@jbyrneagency.com";
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$subject = "Insurance Quote Request - Step 1";
+
+$message = "";
+$message .= "Name: $name\n";
+$message .= "E-mail: $email\n";
+$message .= "Phone: $phone\n\n";
+$message .= "Address: $address\n";
+$message .= "City: $city\n";
+$message .= "State: $state\n";
+$message .= "Zip: $zip\n";
+$message .= "IP: $ip\n";
+
+$headers .= "From: jbyrnemarine.com <contact@risingtidemedia.com>\r\n";
+
+$headers .= "Bcc: contact@risingtidemedia.com\r\n";
+
+mail($to, $subject, $message, $headers);
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Online Boat Insurance Quotes - J Byrne Marine Insurance</title>
+<meta name="Robots" content="index, follow" />
+<meta name="Content" content="general" />
+<link href="marineinsurance.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="container">
+ <div id="page">
+ 	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html" class="current">Boat Insurance Quotes</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="locations.html">Locations</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="left">
+		<div id="gradient" style="padding-right:5px;">
+<?php
+if ($_REQUEST['do'] == "step2") {
+?>
+			<form action="https://www.jbyrnemarine.com/onlineboatinsurancequotes_3.html" method="post" name="boatinsurancequote">
+			<input name="do" type="hidden" value="step3" />
+			<h3 style="margin-top:5px;">Online Boat Insurance Quote Request - Step 2 of 3</h3>
+			<p>Please take five minutes of your time to find how much you can save. It is understood that this is not an application for insurance. There is no obligation and no sales person will call or visit me.</p>
+
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+          <tr>
+
+            <td colspan="4" bgcolor="#003D3A"><div align="left" style="color: #FFFFFF; font-weight:bold;">OWNER INFORMATION</div></td>
+          </tr>
+		  <tr class="form-field-header">
+
+            <td class="form-field-header"><div align="left">Titled Owner:</div></td>
+            <td><input name="TitledOwner" type="text" id="Titled Owner" value="<?php echo $name; ?>" class="input" /></td>
+            <td><div align="right">Home Phone:</div></td>
+            <td><input name="HomePhone" type="text" id="Home Phone" value="<?php echo $phone; ?>" class="input" /></td>
+            </tr>
+		  <tr class="form-field-header">
+            <td class="form-field-header"><div align="left">Mailing Address:</div></td>
+
+            <td><input name="Address" type="text" id="Address" value="<?php echo $address; ?>" class="input" /></td>
+            <td><div align="right">Work Phone: </div></td>
+            <td><input name="WorkPhone" type="text" id="Work Phone" class="input" /></td>
+            </tr>
+		  <tr class="form-field-header">
+
+            <td class="form-field-header">City:</td>
+            <td><input name="City" type="text" id="City" value="<?php echo $city; ?>" class="input" /></td>
+
+            <td><div align="right">Fax:</div></td>
+            <td><input name="Fax" type="text" id="Fax" class="input" /></td>
+            </tr>
+			  <tr class="form-field-header">
+            <td width="18%" class="form-field-header"><div align="left">State:</div></td>
+
+            <td><input name="State" type="text" id="State" size="3" value="<?php echo $state; ?>" class="input" /></td>
+            <td width="18%"><div align="right">E-Mail:</div></td>
+
+            <td><input name="E-Mail" type="text" id="E-Mail" value="<?php echo $email; ?>" class="input" /></td>
+            </tr>
+			  <tr class="form-field-header">
+                <td width="18%" class="form-field-header">Zip:</td>
+                <td><input name="Zip" type="text" id="Zip" size="10" value="<?php echo $zip; ?>" class="input" /></td>
+            <td width="18%"><div align="right">Occupation:</div></td>
+
+            <td><input name="Occupation" type="text" id="Occupation" class="input" /></td>
+
+            </tr>
+        </table>
+          <br />
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+              <td colspan="4" bgcolor="#003D3A"><div align="left" style="color: #FFFFFF; font-weight:bold;">OPERATOR INFORMATION</div></td>
+            </tr>
+
+			<tr class="form-field-header">
+
+              <td colspan="4" class="form-field-header"><div align="left">Operator #1</div>                </td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="24%" class="form-field-header"><div align="left">Name:</div></td>
+              <td width="20%"><input name="Operator1-Name" type="text" id="Operator1-Name" class="input" /></td>
+              <td width="28%"><div align="right">Birthdate:</div></td>
+
+              <td width="28%"><input name="Operator1-DOB" type="text" id="Operator1-DOB" size="12" class="input" /></td>
+            </tr>
+
+            <tr class="form-field-header">
+              <td colspan="4" class="form-field-header"><div align="left">List Prior Boats owned from biggest to smallest - (must enter length, manufacturer, model and years owned)</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="4">                  <textarea name="PriorBoatsOwned" cols="70" rows="2" id="Operator1-Experience" class="input" /></textarea></td>
+            </tr>
+            <tr class="form-field-header">
+
+              <td height="30" class="form-field-header"><div align="left">Total Years Operating Boats:</div></td>
+              <td><input name="TypesOwned" type="text" id="TypesOwned" size="3" class="input" /></td>
+              <td><div align="right">Total Years as a Boat Owner: </div></td>
+              <td><input name="YearsasBoatOwner" type="text" id="YearsasBoatOwner" size="3" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td height="39" rowspan="2" class="form-field-header">Prior Boat Losses: If yes give date, loss description, how much was paid out.</td>
+
+              <td rowspan="2"><input name="Operator1-PriorBoatLosses" type="text" id="Operator1-PriorBoatLosses" class="input" /></td>
+
+              <td rowspan="2"><div align="right">Boater Safety<br />Courses?:</div></td>
+              <td><input name="SafetyCourses-Yes" type="checkbox" id="SafetyCourses-Yes" value="checkbox" />Yes
+                  <input name="SafetyCourses-No" type="checkbox" id="SafetyCourses-No" value="checkbox" />No
+	      </td>
+            </tr>
+            <tr class="form-field-header">
+
+              <td><select name="Operator1-SafetyCourses" id="Operator1-SafetyCourses" class="input" />
+
+                <option selected>Choose One</option>
+                <option>USPS</option>
+                <option>USCDA</option>
+                <option>Both</option>
+                <option>Captain's License</option>
+
+                          </select></td>
+            </tr>
+			 <tr class="form-field-header">
+
+              <td colspan="2" class="form-field-header">Any Motor Vehicle Violations in the Last 3 Years?</td>
+              <td><div align="left">
+                <select name="Operator1-MotorVehicleViolationsinLast3Years" id="Operator1-MotorVehicleViolationsinLast3Years" class="input" />
+                  <option selected>Choose One</option>
+
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+
+                </div></td>
+              <td>&nbsp;</td>
+			 </tr>
+            <tr class="form-field-header">
+
+              <td colspan="4" class="form-field-header" align="left"><div align="left"><p>If yes, please explain: <br> 
+                  <textarea name="Operator1-Experience" cols="70" rows="2" id="Operator1-Experience" class="input" /></textarea>
+
+                </p>
+              </div>
+          <input name="imageField" type="image" src="images/send-bt.gif" alt="Submit" />
+	</td>
+            </tr>
+          </table>
+
+
+			</form>
+<?php
+	}
+?>
+<p align="right"><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=25qFgYaWxhI3h8jJ88tyjkVeAmyj8a8yqC1Ib1PjtBWTdodDK2sYujxuAiC"></script></span></p>
+			<div style="clear:both;">&nbsp;</div>
+		</div>
+	</div>
+	<div id="sidebar">
+		<div id="marineinsurancetypes">
+			<div style="padding:0px;" align="center">
+			<a rel="nofollow" href="contactus.html"><img src="images/marine-insurance-types.gif" border="0" alt="" /></a>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;">&nbsp;</div>
+	<div align="center" style="padding-bottom:5px;"><img src="images/marine-insurance.gif" border="0" alt="Marine Insurance" /></div>
+
+	<div id="footer"><a rel="nofollow" href="/">Home</a>  |  <a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a>  |  <a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html">Boat Insurance Quotes</a>  |  <a rel="nofollow" href="locations.html">Locations</a>  |  <a rel="nofollow" href="contactus.html">Contact Us</a>  |  <a rel="nofollow" href="boatinsuranceinformation.html">Boat Insurance Information</a>
+
+    		<p>&copy; 2009 J Byrne Marine Insurance Agency. <a rel="nofollow" href="privacypolicy.html">Privacy Policy</a>  |  <a rel="nofollow" href="sitemap.html">Site Map</a></p>
+	</div>
+
+ </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7890956-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

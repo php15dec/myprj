@@ -1,0 +1,533 @@
+<?php
+if (isset($_REQUEST['do'])) {
+}
+else {
+$_REQUEST['do'] == "";
+}
+if ($_REQUEST['do'] == "step3") { 
+foreach($_GET as $a=>$b){$$a=$b;} 
+foreach($_POST as $a=>$b){$$a=$b;}
+
+$to  = "Dworthman@jbyrneagency.com";
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$subject = "Insurance Quote Request - Step 2";
+
+$message = "";
+$message .= "Titled Owner: ".$_REQUEST['TitledOwner']."\n";
+$message .= "Home Phone: ".$_REQUEST['HomePhone']."\n";
+$message .= "Work Phone: ".$_REQUEST['WorkPhone']."\n";
+$message .= "Fax: ".$_REQUEST['Fax']."\n";
+$message .= "Address: ".$_REQUEST['Address']."\n";
+$message .= "City: ".$_REQUEST['City']."\n";
+$message .= "State: ".$_REQUEST['State']."\n";
+$message .= "Zip: ".$_REQUEST['Zip']."\n";
+$message .= "E-Mail: ".$_REQUEST['E-Mail']."\n";
+$message .= "Occupation: ".$_REQUEST['Occupation']."\n\n";
+
+$message .= "Operator 1 - Name: ".$_REQUEST['Operator1-Name']."\n";
+$message .= "Operator 1 - Birthdate: ".$_REQUEST['Operator1-DOB']."\n";
+// $message .= "Operator 1 - Driver's License Number: ".$_REQUEST['Operator1-DriversLicenseNumber']."\n";
+// $message .= "Operator 1 - Driver's License State: ".$_REQUEST['Operator1-DiversLicenseState']."\n";
+$message .= "Prior Boats Owned: ".$_REQUEST['PriorBoatsOwned']."\n";
+$message .= "Total Years Operating Boats: ".$_REQUEST['TypesOwned']."\n";
+$message .= "Total Yars as a Boat Owner: ".$_REQUEST['YearsasBoatOwner']."\n";
+$message .= "Prior Boat Losses: ".$_REQUEST['Operator1-PriorBoatLosses']."\n";
+$message .= "Boater Safety Courses: ".$_REQUEST['SafetyCourses-Yes']."".$_REQUEST['SafetyCourses-No']." - ".$_REQUEST['Operator1-SafetyCourses']."\n";
+$message .= "Any Motor Vehicle Violations in the Last 3 Years?: ".$_REQUEST['Operator1-MotorVehicleViolationsinLast3Years']."\n";
+$message .= "If yes, please explain: ".$_REQUEST['Operator1-Experience']."\n\n";
+
+$message .= "IP: $ip\n";
+
+$headers .= "From: jbyrnemarine.com <contact@risingtidemedia.com>\r\n";
+
+$headers .= "Bcc: contact@risingtidemedia.com\r\n";
+
+mail($to, $subject, $message, $headers);
+
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Online Boat Insurance Quotes - J Byrne Marine Insurance</title>
+<meta name="Robots" content="index, follow" />
+<meta name="Content" content="general" />
+<link href="marineinsurance.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="container">
+ <div id="page">
+ 	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html" class="current">Boat Insurance Quotes</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="locations.html">Locations</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="left">
+		<div id="gradient" style="padding-right:5px;">
+<?php
+if ($_REQUEST['do'] == "step3") {
+?>
+			<form action="https://www.jbyrnemarine.com/onlineboatinsurancequotes_4.html" method="post" name="boatinsurancequote">
+			<input name="do" type="hidden" value="submit" />
+			<h3 style="margin-top:5px;">Online Boat Insurance Quote Request - Step 3 of 3</h3>
+
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+
+            <tr>
+              <td colspan="9" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">BOAT INFORMATION</div></td>
+            </tr>
+			
+            <tr class="form-field-header">
+              <td width="4%">Year:</td>
+              <td width="27%"><input name="Boat-Year" type="text" id="Boat-Year" value="" size="4" class="input" /></td>
+              <td width="21%"><p align="left">Length: 
+                  <input name="Boat-Length" type="text" id="Boat-Length" value="" size="6" class="input" />
+
+              </p>              </td>
+              <td colspan="6"><div align="left">Manufacturer:
+                  <input name="Boat-Manufacturer" type="text" id="Boat-Manufacturer" value="" class="input" />
+
+              </div></td>
+            </tr>
+			<tr class="form-field-header">
+              <td colspan="3">Model:
+              <input name="Boat-Model" type="text" id="Boat-Model" value="" size="16" class="input" /></td>
+              <td colspan="6"><div align="left"></div></td>
+
+            </tr>
+            <tr class="form-field-header">
+              <td height="39" colspan="3"><p>Exact Mooring Location - Winter<br>
+                (List Marina, Residence, City, State, Zip)</p>                </td>
+              <td colspan="4">
+                <div align="left">
+                  <input name="Boat-WinterLocation" type="text" id="Boat-WinterLocation" value="" size="30" class="input" />
+
+              </div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td height="36" colspan="3"><p>Exact Mooring Location - Summer<br>
+                (List Marina, Residence, City, State, Zip)</p>                </td>
+              <td colspan="4">
+                <div align="left">
+
+                  <input name="Boat-SummerLocation" type="text" id="Boat-SummerLocation" value="" size="30" class="input" />
+              </div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="2"> Lay-up Period: </td>
+              <td><div align="left">
+                <select name="LayUpPeriod" id="LayUpPeriod" class="input" />
+                  <option selected>Choose One</option>
+
+                  <option>10/01 to 04/01</option>
+                  <option>11/01 to 03/01</option>
+                  <option>11/01 to 04/01</option>
+                  <option>12/01 to 03/01</option>
+                  <option>12/01 to 04/01</option>
+                  <option>01/01 to 03/01</option>
+
+                  <option>01/01 to 04/01</option>
+                  <option>No Lay Up Period</option>
+                              </select>
+              </div></td>
+              <td colspan="5">&nbsp;</td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="2" height="45"><div align="left">Navigation Area:</div></td>
+
+              <td colspan="4"><select name="NavigationArea" id="NavigationArea" class="input" />
+                <option selected>Choose One</option>
+                <option>North Atlantic (ME to NC)</option>
+                <option>New England (ME to NJ)</option>
+                <option>Full Atlantic (ME to FL)</option>
+                <option>South Atlantic (NC to FL)</option>
+
+                <option>Restricted South Atlantic (NC,SC,GA)</option>
+                <option>Chesapeake Bay</option>
+                <option>Gulf (FL to TX)</option>
+                <option>Atlantic and Gulf (MI to TX)</option>
+                <option>Other - explain in Navigation Comment area</option>
+              </select></td>
+
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="2"><div align="left">Navigation Comments:</div></td>
+
+              <td colspan="4"><input name="NavigationComments" type="text" id="NavigationComments" size="60" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="2">Boat Construction: </td>
+
+              <td><select name="BoatConstructionMaterial" id="BoatConstructionMaterial" class="input" />
+
+                <option selected>Choose One</option>
+                <option>Fiberglass</option>
+                <option>Steel</option>
+                <option>Wood</option>
+                <option>Aluminum</option>
+
+                          </select></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="2">Purchase Date:
+              <input name="Boat-PurchaseDate" type="text" id="Boat-PurchaseDate" value="" size="10" class="input" /></td>
+              <td colspan="2">Purchase Price:
+              <input name="Boat-PurchasePrice" type="text" id="Boat-PurchasePrice" value="$" size="8" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+
+              <td colspan="9">Date of Last Survey:
+              <input name="Boat-Last Survey" type="text" id="Boat-Last Survey" value="" size="10" class="input" /><br>
+              If within 2 years old must provide a copy to be able to quote.  Fax to 609-522-2844 or send by email to <!--<a href="mailto:cdouglass@jbyrneagency.com">cdouglass@jbyrneagency.com</a>--><a href="mailto:Dworthman@jbyrneagency.com">Dworthman@jbyrneagency.com</a></td>
+            </tr>
+          </table>
+          <br />
+          <table width="100%" border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+
+              <td colspan="5" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">EQUIPMENT INFORMATION</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="5">Select ALL That Apply: 
+              <input name="equipment-Loran" type="checkbox" id="equipment-Loran" value="checkbox"> 
+              Loran 
+              &nbsp;&nbsp;&nbsp;
+              <input name="equipment-Halon" type="checkbox" id="equipment-Halon" value="checkbox">
+              Halon(co2) &nbsp;&nbsp;&nbsp;
+
+              <input name="equipment-VHF" type="checkbox" id="equipment-VHF" value="checkbox">
+              VHF &nbsp;&nbsp;&nbsp;
+
+              <input name="equipment-Radar" type="checkbox" id="equipment-Radar" value="checkbox">
+              Radar &nbsp;&nbsp;&nbsp;
+              <input name="equipment-AntiTheft" type="checkbox" id="equipment-AntiTheft" value="checkbox">
+              Anti-Theft &nbsp;&nbsp;&nbsp;
+              <input name="equipment-EPIRB" type="checkbox" id="equipment-EPIRB" value="checkbox">
+
+              EPIRB              </td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="17%">&nbsp;</td>
+              <td width="83%">
+              <input name="equipment-Other" type="checkbox" id="equipment-Other" value="checkbox">
+              Other &nbsp;&nbsp;&nbsp; Please describe:
+              <input name="OtherEquipment" type="text" id="OtherEquipment" value="" size="30" class="input" />			   </td>
+
+            </tr>
+          </table>
+          <br>
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+              <td colspan="5" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">ENGINE INFORMATION</div></td>
+            </tr>
+            <tr class="form-field-header">
+
+              <td width="33%">Type: 
+                <select name="Engine-Type" id="Engine-Type" class="input" />
+
+                  <option selected>Choose One</option>
+                  <option>Single</option>
+                  <option>Twin</option>
+                  <option>Triple</option>
+                </select></td>
+
+              <td width="28%"><p align="left">Fuel: 
+                <select name="Engine-Fuel" id="Engine-Fuel" class="input" />
+                  <option selected>Choose One</option>
+
+                  <option>Gas</option>
+                  <option>Deisel</option>
+                </select>
+</p></td>
+              <td width="39%" colspan="3"><div align="left">Mounting:
+                  <select name="Engine-Mounting" id="Engine-Mounting" class="input" />
+
+                  <option selected>Choose One</option>
+                  <option>Outboard</option>
+
+                  <option>Inboard</option>
+                  <option>I/O</option>
+                  <option>Sail</option>
+                </select>
+
+</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td><div align="left">Horsepower per Motor:
+                  <input name="Engine-HorsepowerPerMotor" type="text" id="Engine-HorsepowerPerMotor" value="" size="5" class="input" />
+              </div></td>
+               <td>Year: 
+                <input name="Engine-Year" type="text" id="Engine-Year" value="" size="4" class="input" />
+              </td>
+               <td>Model: 
+                <input name="Engine-Model" type="text" id="Engine-Model" value="" size="12" class="input" />
+
+              </td>
+            </tr>
+            <tr class="form-field-header">
+              <td><div align="left">Manufacturer:
+                <input name="Engine-Manufacturer" type="text" id="Engine-Manufacturer" value="" class="input" />
+              </div></td>
+              <td colspan="3">Maximum Speed:
+                  <input name="Engine-MaxSpeed" type="text" id="Engine-MaxSpeed" size="5" class="input" /></td>
+            </tr>
+          </table>
+
+          <br>
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+              <td colspan="5" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">GENERAL INFORMATION</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="26%">Any Paid Crew?</td>
+              <td width="25%"><p align="left">
+
+                <select name="PaidCrew" id="PaidCrew" class="input" />
+                  <option selected>Choose One</option>
+
+                  <option>No</option>
+                  <option>Part time</option>
+                  <option>Full time</option>
+                </select>
+
+              </p></td>
+              <td width="49%" colspan="3"><div align="left">&nbsp;
+              </div></td>
+            </tr>
+			 <tr class="form-field-header">
+              <td>Any waterskiing or tubing?</td>
+              <td width="25%"><p align="left">
+                <select name="WaterskiingorTubing" id="WaterskiingorTubing" class="input" />
+
+                  <option selected>Choose One</option>
+
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </p></td>
+              <td colspan="3">Percentage of use for skiing or tubing:
+                <input name="PercentofSkiingorTubing" type="text" id="PercentofSkiingorTubing" size="5" class="input" />
+
+              </td>
+            </tr>
+            <tr class="form-field-header">
+              <td>Any Charters?</td>
+              <td width="25%"><p align="left">
+                <select name="Charters" id="Charters" class="input" />
+                  <option selected>Choose One</option>
+                  <option>Yes</option>
+
+                  <option>No</option>
+                </select>
+              </p></td>
+              <td colspan="3">How many charters per year:
+                <input name="PercentofUseforCharters" type="text" id="PercentofUseforCharters" size="5" class="input" />
+</td>
+            </tr>
+          </table>
+          <br />
+
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+              <td colspan="11" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">TRAILER INFORMATION</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="17%">Year:</td>
+              <td colspan="8"><div align="left">
+
+                <input name="Trailer-Year" type="text" id="Trailer-Year" size="4" class="input" />
+
+              </div></td>
+              <td width="13%"><div align="right">Model:</div></td>
+              <td width="47%"><input name="Trailer-Model" type="text" id="Trailer-Model" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td>Manufacturer:</td>
+
+              <td colspan="8"><div align="left">
+                <input name="Trailer-Manufacturer" type="text" id="Trailer-Manufacturer" class="input" />
+              </div></td>
+              <td><div align="right">Value:</div></td>
+              <td><input name="Trailer-Value" type="text" id="Trailer-Value" size="5" class="input" /></td>
+            </tr>
+          </table>
+          <br />
+
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+
+              <td colspan="4" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">LIMITS OF COVERAGE</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="27%">Hull Limit Including Electronics:</td>
+              <td width="19%"><div align="left">
+
+                <input name="Limits-HullLimitIncludingElectronics" type="text" id="Limits-HullLimitIncludingElectronics" value="" size="7" class="input" />
+</div></td>
+              <td width="18%"><div align="right">Optional Coverage:</div></td>
+
+              <td width="36%"><input name="Limits-OptionalCoverage" type="checkbox" id="Limits-OptionalCoverage" value="checkbox">
+                Yes</td>
+            </tr>
+            <tr class="form-field-header">
+              <td>Liability:</td>
+
+              <td><div align="left">
+                <select name="LiabilityLimit" id="LiabilityLimit" class="input" />
+                  <option selected>Choose One</option>
+
+                  <option>$300,000</option>
+                  <option>$500,000</option>
+                  <option>$1,000,000</option>
+
+                </select>
+              </div></td>
+              <td><div align="right">Fishing Equipment: </div></td>
+              <td><input name="Limits-Fishing" type="text" id="Limits-Fishing" value="$" size="7" class="input" /></td>
+            </tr>
+          </table>
+          <br />
+          <table width="100%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+
+            <tr>
+              <td colspan="11" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">MISCELLANEOUS INFORMATION</div></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="9">Comments:
+                <input name="MiscellaneousComments" type="text" id="MiscellaneousComments" size="80" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td width="34%" height="28">Current Carrier:
+                <input name="CurrentCarrier" type="text" id="CurrentCarrier" size="16" class="input" /></td>
+
+              <td width="23%">Expiration Date:
+                <input name="CurrentPremiumExpirationDate" type="text" id="CurrentPremiumExpirationDate" size="5" class="input" /></td>
+              <td width="43%">Current Premium:
+                <input name="CurrentPremium" type="text" id="CurrentPremium" size="5" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td>Is boat financed?
+                <select name="BoatFinanced" id="BoatFinanced" class="input" />
+                  <option selected>Choose One</option>
+                  <option>Yes</option>
+
+                  <option>No</option>
+                </select>
+              </td>
+              <td><div align="right">Lein Holder Information: </div></td>
+              <td width="43%"><input name="Leinholder-Info" type="text" id="Leinholder-Info" size="48" class="input" /></td>
+            </tr>
+            <tr class="form-field-header">
+              <td colspan="3">How did you hear about us?
+                <select name="HowHearAboutUs" id="HowHearAboutUs" class="input" />
+
+                  <option selected>Choose One</option>
+                  <option>TV</option>
+                  <option>Referral</option>
+                  <option>Marina</option>
+                  <option>Boat Show</option>
+                  <option>Newspaper</option>
+                  <option>SportFishermen.com</option>
+                  <option>ROFFS</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <table width="99%"  border="0" cellpadding="5" style="background-color:#DFE9EA;">
+            <tr>
+              <td colspan="2" bgcolor="#003D3A" class="form-title"><div align="left" style="color: #FFFFFF; font-weight:bold;">FAIR CREDIT STATEMENT</div></td>
+
+            </tr>
+			        <tr>
+			          <td colspan="2" class="form-field-header"><div align="center"><br>Note: You must agree to the following terms in
+			            order to use this service.<br>Please read the statement below, carefully
+			            - before proceeding.</div> </td>
+                    </tr>
+			        <tr>
+			          <td><div align="center"><p>
+
+                <div style="font-size: 11px; background-color: #FFFFFF; padding: 5px;" align="left">I understand that the J. Byrne Agency, Inc. on behalf of the Insurance Company will order an investigative consumer report as part of the underwriting process to qualify, evaluate, and quote my insurance coverage. Various consumer reports such as motor vehicle reports, credit reports, and claim history with prior insurance companies, may be obtained.  In the event that the coverage is denied based on information in one of these reports, I will be advised of this and given the name and address of the consumer agency making the report.<br /><br />
+
+Please note:  The price estimate (or quote for insurance coverage) provided to you by the J. Byrne Agency, Inc. will be base on the information supplied by you on this application.</div>
+</p>
+              <p>
+                <input name="FairCreditStatement" type="checkbox" id="FairCreditStatement" value="I Agree">                
+                <span class="form-field-header">I Have Read the &quot;Fair Credit Statement - and I AGREE to the terms
+              set forth.</span></p>
+              <p><span style="color:red;">WARNING: Do NOT Continue without checking the box above.<br>
+              You will not be able to continue and the answers to the questions you just answered may be lost.</span><br>
+                  <br>
+
+              </p>
+			          </div></td>
+              </tr>
+              <tr>
+              <td align="center" colspan="2">
+                <input name="TitledOwner" type="hidden" value="<?php echo $_REQUEST['TitledOwner']; ?>" />
+                <input name="HomePhone" type="hidden" value="<?php echo $_REQUEST['HomePhone']; ?>" />
+                <input name="WorkPhone" type="hidden" value="<?php echo $_REQUEST['WorkPhone']; ?>" />
+                <input name="Fax" type="hidden" value="<?php echo $_REQUEST['Fax']; ?>" />
+                <input name="Address" type="hidden" value="<?php echo $_REQUEST['Address']; ?>" />
+                <input name="City" type="hidden" value="<?php echo $_REQUEST['City']; ?>" />
+                <input name="State" type="hidden" value="<?php echo $_REQUEST['State']; ?>" />
+                <input name="Zip" type="hidden" value="<?php echo $_REQUEST['Zip']; ?>" />
+                <input name="E-Mail" type="hidden" value="<?php echo $_REQUEST['E-Mail']; ?>" />
+                <input name="Occupation" type="hidden" value="<?php echo $_REQUEST['Occupation']; ?>" />
+                <input name="Operator1-Name" type="hidden" value="<?php echo $_REQUEST['Operator1-Name']; ?>" />
+                <input name="Operator1-DOB" type="hidden" value="<?php echo $_REQUEST['Operator1-DOB']; ?>" />
+                <input name="PriorBoatsOwned" type="hidden" value="<?php echo $_REQUEST['PriorBoatsOwned']; ?>" />
+                <input name="TypesOwned" type="hidden" value="<?php echo $_REQUEST['TypesOwned']; ?>" />
+                <input name="YearsasBoatOwner" type="hidden" value="<?php echo $_REQUEST['YearsasBoatOwner']; ?>" />
+                <input name="Operator1-PriorBoatLosses" type="hidden" value="<?php echo $_REQUEST['Operator1-PriorBoatLosses']; ?>" />
+                <input name="SafetyCourses-Yes" type="hidden" value="<?php echo $_REQUEST['SafetyCourses-Yes']; ?>" />
+                <input name="SafetyCourses-No" type="hidden" value="<?php echo $_REQUEST['SafetyCourses-No']; ?>" />
+                <input name="Operator1-SafetyCourses" type="hidden" value="<?php echo $_REQUEST['Operator1-SafetyCourses']; ?>" />
+                <input name="Operator1-MotorVehicleViolationsinLast3Years" type="hidden" value="<?php echo $_REQUEST['Operator1-MotorVehicleViolationsinLast3Years']; ?>" />
+                <input name="Operator1-Experience" type="hidden" value="<?php echo $_REQUEST['Operator1-Experience']; ?>" />
+		<input name="imageField" type="image" src="images/send-bt.gif" alt="Submit" />
+              </td>
+            </tr>
+          </table>
+
+			</form>
+<?php
+	}
+?>
+<p align="right"><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=25qFgYaWxhI3h8jJ88tyjkVeAmyj8a8yqC1Ib1PjtBWTdodDK2sYujxuAiC"></script></span></p>
+			<div style="clear:both;">&nbsp;</div>
+		</div>
+	</div>
+	<div id="sidebar">
+		<div id="marineinsurancetypes">
+			<div style="padding:0px;" align="center">
+			<a rel="nofollow" href="contactus.html"><img src="images/marine-insurance-types.gif" border="0" alt="" /></a>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;">&nbsp;</div>
+	<div align="center" style="padding-bottom:5px;"><img src="images/marine-insurance.gif" border="0" alt="Marine Insurance" /></div>
+
+	<div id="footer"><a rel="nofollow" href="/">Home</a>  |  <a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a>  |  <a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html">Boat Insurance Quotes</a>  |  <a rel="nofollow" href="locations.html">Locations</a>  |  <a rel="nofollow" href="contactus.html">Contact Us</a>  |  <a rel="nofollow" href="boatinsuranceinformation.html">Boat Insurance Information</a>
+
+    		<p>&copy; 2009 J Byrne Marine Insurance Agency. <a rel="nofollow" href="privacypolicy.html">Privacy Policy</a>  |  <a rel="nofollow" href="sitemap.html">Site Map</a></p>
+	</div>
+
+ </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7890956-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

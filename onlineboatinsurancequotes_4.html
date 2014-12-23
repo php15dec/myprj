@@ -1,0 +1,170 @@
+<?php
+if (isset($_REQUEST['do'])) {
+}
+else {
+$_REQUEST['do'] == "";
+}
+if ($_REQUEST['do'] == "submit") { 
+foreach($_GET as $a=>$b){$$a=$b;} 
+foreach($_POST as $a=>$b){$$a=$b;}
+
+$to  = "Dworthman@jbyrneagency.com";
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$subject = "Insurance Quote Request - Complete";
+
+$message = "";
+$message .= "Titled Owner: ".$_REQUEST['TitledOwner']."\n";
+$message .= "Home Phone: ".$_REQUEST['HomePhone']."\n";
+$message .= "Work Phone: ".$_REQUEST['WorkPhone']."\n";
+$message .= "Fax: ".$_REQUEST['Fax']."\n";
+$message .= "Address: ".$_REQUEST['Address']."\n";
+$message .= "City: ".$_REQUEST['City']."\n";
+$message .= "State: ".$_REQUEST['State']."\n";
+$message .= "Zip: ".$_REQUEST['Zip']."\n";
+$message .= "E-Mail: ".$_REQUEST['E-Mail']."\n";
+$message .= "Occupation: ".$_REQUEST['Occupation']."\n\n";
+
+$message .= "Operator 1 - Name: ".$_REQUEST['Operator1-Name']."\n";
+$message .= "Operator 1 - Birthdate: ".$_REQUEST['Operator1-DOB']."\n";
+// $message .= "Operator 1 - Driver's License Number: ".$_REQUEST['Operator1-DriversLicenseNumber']."\n";
+// $message .= "Operator 1 - Driver's License State: ".$_REQUEST['Operator1-DiversLicenseState']."\n";
+$message .= "Prior Boats Owned: ".$_REQUEST['PriorBoatsOwned']."\n";
+$message .= "Total Years Operating Boats: ".$_REQUEST['TypesOwned']."\n";
+$message .= "Total Yars as a Boat Owner: ".$_REQUEST['YearsasBoatOwner']."\n";
+$message .= "Prior Boat Losses: ".$_REQUEST['Operator1-PriorBoatLosses']."\n";
+$message .= "Boater Safety Courses: ".$_REQUEST['SafetyCourses-Yes']."".$_REQUEST['SafetyCourses-No']." - ".$_REQUEST['Operator1-SafetyCourses']."\n";
+$message .= "Any Motor Vehicle Violations in the Last 3 Years?: ".$_REQUEST['Operator1-MotorVehicleViolationsinLast3Years']."\n";
+$message .= "If yes, please explain: ".$_REQUEST['Operator1-Experience']."\n\n";
+
+$message .= "Boat Year: ".$_REQUEST['Boat-Year']."\n";
+$message .= "Boat Length: ".$_REQUEST['Boat-Length']."\n";
+$message .= "Manufacturer: ".$_REQUEST['Boat-Manufacturer']."\n";
+$message .= "Model: ".$_REQUEST['Boat-Model']."\n";
+$message .= "Exact Mooring Location - Winter: ".$_REQUEST['Boat-WinterLocation']."\n";
+$message .= "Exact Mooring Location - Summer: ".$_REQUEST['Boat-SummerLocation']."\n";
+$message .= "Lay-up Period: ".$_REQUEST['LayUpPeriod']."\n";
+$message .= "Navigation Area: ".$_REQUEST['NavigationArea']."\n";
+$message .= "Navigation Comments: ".$_REQUEST['NavigationComments']."\n";
+$message .= "Boat Construction: ".$_REQUEST['BoatConstructionMaterial']."\n";
+$message .= "Purchase Date: ".$_REQUEST['Boat-PurchaseDate']."\n";
+$message .= "Purchase Price: ".$_REQUEST['Boat-PurchasePrice']."\n";
+$message .= "Date of Last Survey: ".$_REQUEST['Boat-Last Survey']."\n\n";
+
+$message .= "Equipment Information - Loran: ".$_REQUEST['equipment-Loran']."\n";
+$message .= "Equipment Information - Halon: ".$_REQUEST['equipment-Halon']."\n";
+$message .= "Equipment Information - VHF: ".$_REQUEST['equipment-VHF']."\n";
+$message .= "Equipment Information - Radar: ".$_REQUEST['equipment-Radar']."\n";
+$message .= "Equipment Information - AntiTheft: ".$_REQUEST['equipment-AntiTheft']."\n";
+$message .= "Equipment Information - EPIRB: ".$_REQUEST['equipment-EPIRB']."\n";
+$message .= "Equipment Information - Other: ".$_REQUEST['equipment-Other']."\n";
+$message .= "Equipment Information - Other: ".$_REQUEST['OtherEquipment']."\n\n";
+
+$message .= "Engine Type: ".$_REQUEST['Engine-Type']."\n";
+$message .= "Fuel: ".$_REQUEST['Engine-Fuel']."\n";
+$message .= "Mounting: ".$_REQUEST['Engine-Mounting']."\n";
+$message .= "Horsepower per Motor: ".$_REQUEST['Engine-HorsepowerPerMotor']."\n";
+$message .= "Year: ".$_REQUEST['Engine-Year']."\n";
+$message .= "Model: ".$_REQUEST['Engine-Model']."\n";
+$message .= "Manufacturer: ".$_REQUEST['Engine-Manufacturer']."\n";
+$message .= "Maximum Speed: ".$_REQUEST['Engine-MaxSpeed']."\n\n";
+
+$message .= "Any Paid Crew?: ".$_REQUEST['PaidCrew']."\n";
+$message .= "Any waterskiing or tubing?: ".$_REQUEST['WaterskiingorTubing']."\n";
+$message .= "Percentage of use for skiing or tubing: ".$_REQUEST['PercentofSkiingorTubing']."\n";
+$message .= "Any Charters?: ".$_REQUEST['Charters']."\n";
+$message .= "How many charters per year: ".$_REQUEST['PercentofUseforCharters']."\n\n";
+
+$message .= "Trailer Year: ".$_REQUEST['Trailer-Year']."\n";
+$message .= "Trailer Model: ".$_REQUEST['Trailer-Model']."\n";
+$message .= "Trailer Manufacturer: ".$_REQUEST['Trailer-Manufacturer']."\n";
+$message .= "Trailer Value: ".$_REQUEST['Trailer-Value']."\n\n";
+
+$message .= "Hull Limit Including Electronics: ".$_REQUEST['Limits-HullLimitIncludingElectronics']."\n";
+$message .= "Optional Coverage: ".$_REQUEST['Limits-OptionalCoverage']."\n";
+$message .= "Liability: ".$_REQUEST['LiabilityLimit']."\n";
+$message .= "Fishing Equipment: ".$_REQUEST['Limits-Fishing']."\n\n";
+
+$message .= "Comments: ".$_REQUEST['MiscellaneousComments']."\n";
+$message .= "Current Carrier: ".$_REQUEST['CurrentCarrier']."\n";
+$message .= "Expiration Date: ".$_REQUEST['CurrentPremiumExpirationDate']."\n";
+$message .= "Current Premium: ".$_REQUEST['CurrentPremium']."\n";
+$message .= "Is boat financed?: ".$_REQUEST['BoatFinanced']."\n";
+$message .= "Lein Holder Information: ".$_REQUEST['Leinholder-Info']."\n";
+$message .= "How did you hear about us?: ".$_REQUEST['HowHearAboutUs']."\n\n";
+
+$message .= "Fair Credit Statement: ".$_REQUEST['FairCreditStatement']."\n\n";
+
+$message .= "IP: $ip\n";
+
+$headers .= "From: jbyrnemarine.com <contact@risingtidemedia.com>\r\n";
+
+$headers .= "Bcc: contact@risingtidemedia.com\r\n";
+
+mail($to, $subject, $message, $headers);
+
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Online Boat Insurance Quotes - J Byrne Marine Insurance</title>
+<meta name="Robots" content="index, follow" />
+<meta name="Content" content="general" />
+<link href="marineinsurance.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="container">
+ <div id="page">
+ 	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html" class="current">Boat Insurance Quotes</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="locations.html">Locations</a></li><li><img src="images/header-b.png" border="0" /></li><li><a rel="nofollow" href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="left">
+		<div id="gradient" style="padding-right:5px;">
+<?php
+	if ($_REQUEST['do'] == "submit") {
+?>
+				<h3 style="margin-top:5px;">THANK YOU!</h3>
+				<p style="font-size:12px; color:#4A4E50;">A J. Byrne Marine Insurance Representative will contact you soon with your boat insurance quote.</p>
+
+<?php
+	}
+?>
+<p align="right"><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=25qFgYaWxhI3h8jJ88tyjkVeAmyj8a8yqC1Ib1PjtBWTdodDK2sYujxuAiC"></script></span></p>
+			<div style="clear:both;">&nbsp;</div>
+		</div>
+	</div>
+	<div id="sidebar">
+		<div id="marineinsurancetypes">
+			<div style="padding:0px;" align="center">
+			<a rel="nofollow" href="contactus.html"><img src="images/marine-insurance-types.gif" border="0" alt="" /></a>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;">&nbsp;</div>
+	<div align="center" style="padding-bottom:5px;"><img src="images/marine-insurance.gif" border="0" alt="Marine Insurance" /></div>
+
+	<div id="footer"><a rel="nofollow" href="/">Home</a>  |  <a rel="nofollow" href="jbyrnemarineinsurance.html">About Us</a>  |  <a rel="nofollow" href="https://www.jbyrnemarine.com/onlineboatinsurancequotes.html">Boat Insurance Quotes</a>  |  <a rel="nofollow" href="locations.html">Locations</a>  |  <a rel="nofollow" href="contactus.html">Contact Us</a>  |  <a rel="nofollow" href="boatinsuranceinformation.html">Boat Insurance Information</a>
+
+    		<p>&copy; 2009 J Byrne Marine Insurance Agency. <a rel="nofollow" href="privacypolicy.html">Privacy Policy</a>  |  <a rel="nofollow" href="sitemap.html">Site Map</a></p>
+	</div>
+
+ </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7890956-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

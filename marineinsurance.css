@@ -1,0 +1,130 @@
+body{
+  font: 75% arial, verdana, sans-serif;
+  color:#4a4e50;
+  background:url("images/bg.png") repeat;
+  background-color:#FFF;
+  margin:0;
+}
+
+#container{
+	margin:0 auto;
+	width:903px;
+	background:url("images/page-bg.png") repeat;
+}
+
+#page{
+	margin:0 auto;
+	width:893px;
+  	background-color:#FFFFFF;
+}
+
+#header{height:130px; background:url("images/marine-insurance-header.gif") no-repeat;}
+
+#left {
+	float: left;
+	width: 603px;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 5px 5px;
+	}
+#sidebar {
+	float: right;
+	width: 275px;
+	margin: 0px;
+	padding: 5px 5px 5px 5px;
+	line-height: 18px;
+	display: inline;
+	}
+
+/*MENU*/
+/*
+#menu{height:16px; padding:107px 0 10px 0; margin:0; float:right;}
+#menu ul{height:30px; display:inline; margin-left:0; padding-left:0;}
+#menu li{display:inline;}
+#menu a{ 
+	padding:7px 15px 10px 15px;
+	color:#FFF;
+	font-weight:bold;
+	font-size:1.2em;
+	text-decoration:none;	
+}
+#menu a:hover{color:#FFFF00;}
+#menu a.current{color:#FFFF00;}
+*/
+
+#menu{position:relative;display:block;height:30px;padding-top:100px;font-size:13px;font-weight:bold;background:transparent url(/code/slate/images/purpleslate_background.gif) repeat-x top left;font-family:Arial,Verdana,Helvetica,sans-serif;float:right;}
+#menu ul{margin:0px;padding:0;list-style-type:none;width:auto;}
+#menu ul li{display:block;float:left;margin:0 1px 0 0;}
+#menu ul li a{display:block;float:left;color:#ffffff;text-decoration:none;padding:7px 14px 0 10px;height:28px;}
+#menu ul li a:hover, #menu ul li a.current{color:#ffff00;background:transparent url(images/header-a.png) no-repeat top center;}
+
+#marineinsurance{width:265px; height:450px; padding:5px; background-color:#DFE9EA;}
+#marineinsurance h3{margin:0 0 5px 0; padding-bottom:3px; border-bottom:1px solid #006C67; color:#003D3A; font-size:18px;}
+
+#marineinsurance a{ 
+	color:#232E46;
+	text-decoration:none;	
+}
+#marineinsurance a:hover{color:#232E46;}
+#marineinsurance a.current{color:#232E46;}
+#marineinsurance a.visited{color:#232E46;}
+
+.input{border:1px solid #BFD4D5; width:95%; padding:3px;}
+
+#marineinsurancetypes{width:275px; height:241px; background-color:#F4F4F4; background:url("images/box-bg-1.gif") repeat; margin-top:5px;}
+
+#homegradient{width:603px; height:490px; background:url("images/box-bg-2.gif") repeat; margin-top:5px;}
+
+#news{
+	float: left;
+	margin: 0px;
+	padding: 5px 5px 5px 5px;
+}
+#news h3{margin:0; padding-bottom:3px; border-bottom:1px solid #006C67; color:#003D3A; font-size:17px;}
+#news p{color:#003D3A; font-size:12px; line-height:120%;}
+
+#gradient{
+	background:url("images/box-bg-2.gif") repeat;
+	min-height:500px;
+}
+
+#gradientl{
+	float: left;
+	width: 140px;
+	margin: 0px;
+	padding: 5px 5px 5px 5px;
+}
+
+#gradientr{
+	float: right;
+	width: 450px;
+	margin: 0px;
+	padding: 5px 5px 5px 5px;
+}
+#gradientr h3{margin:0; padding-bottom:3px; border-bottom:1px solid #006C67; color:#003D3A; font-size:18px;}
+#gradientr p{color:#032F60; font-size:14px;}
+
+#menur{width:253px; min-height:498px; border:1px solid #DEDEDE; background-color:#F4F4F4; background:url("images/box-bg-3.gif") no-repeat;}
+
+#footer{
+	background-color: #f1f1f1;
+	border-top:5px solid #e6e6e6;
+     	text-align: center;
+	bottom: 0px;
+     	left: 0px;
+	padding:15px 0 10px 0;
+	color:#878787;
+	width:100%;
+}
+#footer a{color:#878787; margin:0 5px;}
+#footer a:hover{color:#646464;}
+
+.fb_button{background: none repeat scroll 0 0 #DFE9EA;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+	margin-bottom:5px;}
+	
+.email{
+		display:none;
+	}
+
