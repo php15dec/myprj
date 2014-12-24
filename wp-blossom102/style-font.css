@@ -1,0 +1,106 @@
+/* -- Mods for Custom Google Fonts -- */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,700,700italic,800italic,800|Droid+Serif:400,400italic,700,700italic);
+
+body {
+	font-family: 'open sans','droid serif',arial, sans-serif;
+	font-size:14px;
+	line-height:1.55em;
+	color:#555;
+	}
+
+h1,h2,h3,h4,h5,h6,h7,
+#sitetitle .title {
+	font-family: 'open sans','droid serif',arial, sans-serif;
+	font-weight:300;
+	}
+
+
+.meta,
+.catslide-meta,
+.tabs,
+.wp-pagenavi,
+.flextabs-custom-controls {
+	font-family: 'open sans', arial, sans-serif;
+	}
+
+#content { 
+	font-size:16px;
+	line-height:1.65em;
+	}
+
+.mysubscribebox,
+#comments,
+#widgetized-page,
+#alt-home-bottom,
+#footer-widgets,
+.post-by-2,
+.cats-by-2 .entry,
+.cat-posts-stacked,
+#content table,
+.single .navigation,
+table#wp-calendar caption,
+a#cancel-comment-reply-link,
+.sitemap
+.archive-tabs a,
+.meta,
+.index-3-4-archives select,
+.readmore a.more-link, 
+.readmore a.more-link:link, 
+.readmore a.more-link:visited,
+.sitemap-wide,
+.sitemap-narrow,
+#portfolio {
+	font-size:14px;
+	line-height:1.55em
+	}
+
+#footer,
+p.sitemap-meta,
+#content .cat-posts-stacked .meta {
+	font-size:13px;
+	}
+
+.footurl {
+	font-size:16px;
+	}
+
+#content .post-header .meta-date .meta-inner {
+	font-size:11px !important;
+	text-transform:uppercase;
+	}
+
+#topnav {
+	font-size:12px;
+	}
+
+#catnav {
+	font-size:13px;
+	}
+
+#sitetitle .title {
+	font-size:30px;
+	margin-bottom:3px;
+	}
+
+#sitetitle .description {
+	font-size:14px;
+	}
+
+.meta a,
+.catslide-meta a {
+	color:#777;
+	border-bottom:1px dotted #bbb;
+	}
+
+.meta a:hover,
+.catslide-meta a:hover {
+	color:#777;
+	border-bottom:1px dotted #bbb;
+	}
+
+.meta a:hover,
+.catslide-meta a:hover {
+	color:#111;
+	border-bottom:1px dotted #333;
+	}
